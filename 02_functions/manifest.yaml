@@ -1,0 +1,19 @@
+project:
+  namespace: _
+  packages:
+    package-hello-world:
+      actions:
+        action-hello-world:
+          function: ./helloWorld.js
+          runtime: nodejs:16
+      
+      triggers:
+        trigger-every-15-mins:
+          feed: /whisk.system/alarms/interval
+          inputs:
+            minutes: 15
+
+      rules:
+        rule-trigger-every-15-mins:
+          trigger: trigger-every-15-mins
+          action: action-hello-world

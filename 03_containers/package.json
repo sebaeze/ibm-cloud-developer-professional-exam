@@ -1,0 +1,24 @@
+{
+  "name": "hello_world",
+  "version": "1.0.0",
+  "description": "Hello world Docker server",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "keywords": [
+    "Docker",
+    "IBM Cloud",
+    "hello world"
+  ],
+  "author": "sebaeze@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  }
+}
