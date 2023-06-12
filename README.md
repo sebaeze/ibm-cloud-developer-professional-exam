@@ -169,3 +169,119 @@ Multizone regions supported.
 ## Section 2: Modern Integration ( 20% )
 
 ### Identify the key components of a Cloud Native architecture
+
+#### Key components:
+*   Cloud-Native Microservices
+*   Microservices Architecture
+
+.   Microservice: Independently deployable, language independent, less risk in changes, iterative at will
+.   12 Factor methodology: Clarify the boundaries between application and infrastructure. 
+    It includes: codebase, dependencies, config, backing services, build+release+run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admins processes.
+.   MicroProfiles and Kubernetes can be used to implement the 12-factor methodologies.
+
+#### List the modern integration patterns available in the Cloud Architecture Center
+*   Application Modernization: Moving from legacy architecture to Cloud env.
+*   IBM Cloud Transformation Advisor: Helps to analyze and modernize current architecture.
+*   
+
+### Differentiate between the different integration services in IBM Cloud
+*   API Connect
+*   API Gateway
+*   IBM Event streams: Built with Apache Kafka -> Consumer, producer and API admin, Streams API, Connect API
+*   IBM APP Connect: Creates workflows => connects APIs, APPs and Software. There are 2 flows:
+                    -> Event-driven
+                    -> For API
+*   IBM MQ: Litle queue manager; Billable queue Manager.
+            The Queue Manager can be deployed on IBM Cloud and AWS.
+*   RabbitMQ: Message broker. It Helps to decouple applications and to balance the workload into the backend.
+
+### Choose the services that comprise the API lifecycle
+
+*   npm package Loopback+apiconnect: Easy integration with IBM Cloud services and API Connect
+
+Data Source             Connector Package
+---------------------   -----------------------------
+Cloudant                loopback-connector-cloudant
+DashDB                  loopback-connector-dashdb
+Db2                     loopback-connector-db2
+Db2 for zOS             loopback-connector-db2z
+Microsoft SQL Server    loopback-connector-mssql
+MongoDB                 loopback-connector-mongodb
+MySQL                   loopback-connector-mysql
+Oracle                  loopback-connector-oracle
+PostgreSQL              loopback-connector-postgresql
+SOAP web services       loopback-connector-soap
+REST web services       loopback-connector-rest
+
+## Section 3: Security and Identity ( 15% )
+
+### Identify the key security aspects of cloud native applications
+
+Key componentes of security:
+*   Identities and user access to cloud resources
+*   Protect infrastructure, application and data
+*   Security monitoring across environments
+
+#### Data Security
+
+Data protection at rest and in transit / motion
+*   Block and file storage: IBM Multi-Cloud Data Encryption (MDE)
+*   IBM Key Protect provides key management service ( KMS )
+*   Hyper Protect Crypto Services provides support for automated certificate management
+
+#### Data integrity
+Services for maintaining and assuring data acurracy and consistency.
+*   Hashing Data allows to detect unauthorized data modifications
+*   DB2 has entity and referencial integrity
+*   Object storage supports RC4-128 encryption with MD5-128 and AES-128 encryption with MD5-128
+
+#### Secure DevOps
+Integrations of security aspect to the DevOps practice
+
+### Distinguish the core components of IBM Cloud Identity and Access Management
+*   Authentication using IBMid
+*   Single Sign-On
+*   Multifactor authentication
+*   LDAP directory
+*   Audit and compliance
+
+#### Cloud identity and access management ( IAM )
+*   Roles: viewer, operator, editor, administrator
+*   Service access role: Reader, Writer, Manager
+
+### Indicate the role of IBM key protect services in Secure Key Management
+*   BYOK -> Bring your own key model
+*   HSM -> Hardware security module
+*   
+
+### Differentiate the tools that support Application Security
+
+### Distinguish LogDNA and Security Advisor as they relate to management of Security Visibility
+
+## Section 7: Managing and Running a Cloud Application ( 10% )
+
+### Identify the concepts of an auto-scaling policy in IBM Cloud
+    
+    Autoscaling -> seamless and automatic management of resources.
+    *   Scale Up:   adds compute capacity when workload increases.
+    *   Scale Down: remove unnecesary resources when demand goes down.
+    Rules:
+    *   Schedule: scale up/down based on schedule.
+    *   Deman: scale based on compute demand.
+    Cluster nodes autoscaler:
+    *   Plugin for kubernetes cluster public service and VPC.
+    *   Scales cluster nodes.
+    *   Only works for cluster with public network connectivity.
+    Horizontal Pods autoscaler:
+    *   Scales pods based on demand and custom metrics.
+    Autoscaler for VPC:
+    *   Scales virtual machines
+    *   Dynamically creates and deletes VMs.
+    *   Scales memory and cpu on demand.
+    *   Instance template: defines the details for the VM
+    *   Instance group requires the template for managing a group of VMs, having the same characteristics.
+
+### Distinguish between IBM Cloud application and logging tools
+    *   IBM Cloud monitoring: monitors health of infrastructure and services; telemetry; custom alerts and dashboards.
+    *   Log Analysis: Centralize logging output from services and infrastructure
+    *   IBM Cloud activity tracker: Records API activities into storage services, such as: Object storage.
