@@ -258,10 +258,57 @@ Integrations of security aspect to the DevOps practice
 
 ### Distinguish LogDNA and Security Advisor as they relate to management of Security Visibility
 
+## Section 5: DevOps and Continuous Delivery ( 12% )
+
+### Indicate the use of IBM Cloud Object Storage
+    *   Object storage - COS
+        - Regional: Data is located in several datacenters in the same region
+        - Cross-Region: Data is replicate across regions.
+        - Standard: standard access
+        - Vault: Cool access, once per month + additional cost per GB of data transfer
+        - Cold Vault: Once x 90 days + additional cost per GB of data transfer
+
+### Differentiate the IBM Cloud Databases used to develop applications
+    - Cloudant: NoSQL database
+    - Elasticsearch: RESTful search data
+    - etcd: key-value database -> usefull in configuration data, metadata for kubernetes
+    - 
+
+### Contrast IBM DB2 Warehouse and DB2
+
+
+## Section 5: DevOps and Continuous Delivery ( 12% )
+
+### Recall the concept of DevOps
+    *   Continuous integration
+    *   Continuous delivery
+    *   Continuous deployment
+
+### Services
+    - Cloud Foundry
+    - Tekon-based Delivery pipeline
+    - Openshift: Extends Kubernetes functionality by adding extra features
+    - Urban Code
+### Methodology
+    - DevOps
+    - IBM Garage Methodology
+
+### Indicate the capabilities of IBM Cloud Continuous Delivery Toolchain
+
+
+### IBM Garage Methodology
+    - Advise
+    - Build
+    - Move
+    - Manage
+
 ## Section 7: Managing and Running a Cloud Application ( 10% )
 
 ### Identify the concepts of an auto-scaling policy in IBM Cloud
-    
+
+#### Concepts
+    Scale Up: Vertical scaling -> Adds resources ( CPU, memory, storage, network )    
+    Scale Out: Horizontal scaling -> adds more replicas ( virtual machines, nodes, containers )
     Autoscaling -> seamless and automatic management of resources.
     *   Scale Up:   adds compute capacity when workload increases.
     *   Scale Down: remove unnecesary resources when demand goes down.
@@ -281,7 +328,35 @@ Integrations of security aspect to the DevOps practice
     *   Instance template: defines the details for the VM
     *   Instance group requires the template for managing a group of VMs, having the same characteristics.
 
+#### Scale in kubernetes
+
+Scales to fixed numbers of pods, for example: 2
+```bash
+kubectl scale deployment/my_deployment --replicas=2
+```
+
+Autoscale based on CPU. Min pods=2, Max pods=6
+```bash
+kubectl autoscale deployment/my_deployment --min=2 --max=2 --cpu-percent=75
+```
+
+#### Auto-scaler policies
+    *   Instance limits defines the min and max values for instances.
+    *   Schedules represented in JSON format. The following properties are required:
+        - instance_min_count
+        - instance_max_count
+        - initial_min_instance_count
+        - start_time
+        - end_time
+
 ### Distinguish between IBM Cloud application and logging tools
+
+#### Monitoring
     *   IBM Cloud monitoring: monitors health of infrastructure and services; telemetry; custom alerts and dashboards.
+    *   A sysdig agent is required in order to collect data and forward outside the kubernetes cluster   
+
+#### Observability
     *   Log Analysis: Centralize logging output from services and infrastructure
     *   IBM Cloud activity tracker: Records API activities into storage services, such as: Object storage.
+    *   IBM Cloud platform logs
+    *   IBM Cloud activiy tracker
